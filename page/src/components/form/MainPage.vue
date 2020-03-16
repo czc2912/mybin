@@ -9,7 +9,7 @@
                 <br>
                 Should you reasonably believe that any third-party content you access through this websites is in breach of any law, regulation or third party’s rights, you should notify Canonical in writing through rt@ubuntu.com. In doing so, please follow the guidelines indicated in our website terms under the section Links and third-party content.
             </div>
-            <form action="" method="get">
+            <form action="http://localhost:3000/add" method="post" >
                 <table>
                     <tr>
                         <td><p class="left">Poster:</p></td>
@@ -41,8 +41,9 @@
                         <td class="contentWrapper"><textarea class="content" rows="15" type="text" name="content" /></td>
                     </tr>
                 </table>
-                
-                <input class="pasteButton" type="submit" value="Paste!" />
+                <input class="pasteButton" type="submit" value="Paste!"/>
+                <!-- <input class="pasteButton" type="submit" id="submit" name="submit_button" value="Paste!" /> -->
+
             </form>
         </div>
     </div>
