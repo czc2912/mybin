@@ -1,6 +1,5 @@
-module.exports=function(poster,url){
-    return `
-    <!DOCTYPE html>
+module.exports=function(poster,content){
+    return `<!DOCTYPE html>
     <html>
     <head>
         <meta charset="utf-8" />
@@ -16,14 +15,8 @@ module.exports=function(poster,url){
                 Paste from ${poster}
             </p>
             <div class="descWrapper">
-                <p class="upperdesc">
-                    Paste URL
-                </p>
                 <p class="token">
-                    Use the following URL to obtain the Text you store: <a href="${url}">${url}</a>
-                </p>
-                <p class="lowerdesc">
-                    Paste URL
+                    ${content}
                 </p>
             </div>
         </div>
@@ -76,15 +69,8 @@ module.exports=function(poster,url){
         }
         .token{
             color: gray;
-        }
-        a{
-            color: gray;
-            text-decoration: none;
-        }
-        a:hover{
-            color: white;
+            min-height: 240px;
         }
         </style>
-    </html>
-    `
-}
+    </html>`;
+};

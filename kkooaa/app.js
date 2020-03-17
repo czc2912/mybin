@@ -5,6 +5,8 @@ var mongoose = require('mongoose');
 const bodyParser = require('koa-bodyparser')
 const crypto = require('crypto');
 const tokenpage = require('./tokenpage');
+const textpage = require('./textpage');
+const serve = require('koa-static');
 var tokenUrl;
 
 var router=new Router();
@@ -27,9 +29,7 @@ var paste = mongoose.model('paste',pasteSchema);
 
 
 app.use(bodyParser())//bodyparse中间件，把post中的data放入ctx.request.body;
-router.get('/', function (ctx, next) {
-  ctx.body="Hello koa";
-})
+app.use(serve(__dirname + "/dist"));
 router.post('/add',async (ctx,next)=>{//form用的是post
   obj=ctx.request.body;
   var md5 = crypto.createHash('md5');//创建一个md5 hash算法
@@ -53,7 +53,7 @@ router.get('/:token',async (ctx,next)=>{
   await paste.findOne(token,(err,docs)=>{
     data=docs;
   });
-  ctx.body=data;
+  ctx.body=textpage(data.poster,data.content);
 })
 
 app.use(router.routes()); //作用：启动路由
