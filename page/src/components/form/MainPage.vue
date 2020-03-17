@@ -9,7 +9,7 @@
                 <br>
                 Should you reasonably believe that any third-party content you access through this websites is in breach of any law, regulation or third party’s rights, you should notify Canonical in writing through rt@ubuntu.com. In doing so, please follow the guidelines indicated in our website terms under the section Links and third-party content.
             </div>
-            <form action="http://localhost:3000/add" method="post" >
+            <form action="http://czc2912.xyz:3000/add" method="post" >
                 <table>
                     <tr>
                         <td><p class="left">Poster:</p></td>

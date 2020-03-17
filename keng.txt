@@ -1,0 +1,3 @@
+表单的action属性 没有用绝对路径（没有http方法名）导致一直cancel！
+mongoose的数据表名会加s
+405 method not allowed: koa 里用 app.post方法
